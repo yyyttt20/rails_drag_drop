@@ -1,0 +1,32 @@
+<%= form_with(model: fileupload, local: true) do |form| %>
+  <% if fileupload.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fileupload.errors.count, "error") %> prohibited this fileupload from being saved:</h2>
+
+      <ul>
+      <% fileupload.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :fileupload_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :filepath %>
+    <%= form.text_field :filepath, id: :fileupload_filepath %>
+  </div>
+
+  <div class="field">
+    <%= form.label :thumbnail_img_path %>
+    <%= form.text_field :thumbnail_img_path, id: :fileupload_thumbnail_img_path %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+class Fileupload < ApplicationRecord
+end
